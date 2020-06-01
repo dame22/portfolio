@@ -1,0 +1,20 @@
+{
+	"sites": [
+		{
+			"imgSrc": "./asset/img/main01.png",
+			"siteName": "신일폴리텍",
+			"siteDesc": "HTML 4.01 구조와 종료된 Adobe Flash로 이루어진 기존의 사이트를<br/>HTML5 를 사용하여 이미지 위주의 사이트로 제작",
+			"useLang": "HTML, CSS(media query)",
+			"interaction": "-",
+			"date": "2020.02"
+		},
+		{
+			"imgSrc": "./asset/img/main02.png",
+			"siteName": "PetHome",
+			"siteDesc": "어쩌구..",
+			"useLang": "HTML, CSS(media query),jQuery",
+			"interaction": "슬라이드 메뉴,sms,,,,,,,,,",
+			"date": "2020.04"
+		}
+	]
+}

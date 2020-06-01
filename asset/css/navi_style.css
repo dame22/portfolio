@@ -1,0 +1,196 @@
+@import url('common.css');
+
+body.over{overflow: hidden;}
+header{    
+    position: relative;
+    height: 20vh;
+}
+header > a{
+    position: fixed; right: 0;
+    margin: 20px 40px;
+    z-index: 100;
+
+}
+header a span{
+    width: 30px; height: 3px;
+    background: #333;
+    display: flex;
+    margin: 5px 0;
+}
+header a span:last-of-type{
+    width: 25px;    
+}
+header a.on span:nth-of-type(1){
+    animation: navOn01 0.7s forwards;
+}
+header a.on span:nth-of-type(3){
+    animation: navOn02 0.7s forwards;
+}
+header a.on span:nth-of-type(2){
+    width: 0;
+}
+header a.off span:nth-of-type(1){
+    animation: navOff01 0.7s forwards;
+}
+header a.off span:nth-of-type(3){
+    animation: navOff02 0.7s forwards;
+}
+header a.off span:nth-of-type(2){
+    width: 30px;
+}
+
+@keyframes navOn01{
+    0%{-webkit-transform : translateY(4px) rotate(0);}
+    50%{-webkit-transform : translateY(9px) rotate(0)}
+    100%{-webkit-transform : translateY(8px) rotate(45deg); background: #fff;}
+} 
+@keyframes navOn02{
+    0%{-webkit-transform : translateY(-4px) rotate(0);width: 30px;}
+    50%{-webkit-transform : translateY(-9px) rotate(0);width: 30px;}
+    100%{-webkit-transform : translateY(-8px) rotate(-45deg);width: 30px; background: #fff;}
+}
+@keyframes navOff01{
+    0%{-webkit-transform : translateY(8px) rotate(45deg);}
+    50%{-webkit-transform : translateY(9px) rotate(0)}
+    100%{-webkit-transform : translateY(0px) rotate(0); background: #333;}
+} 
+@keyframes navOff02{
+    0%{-webkit-transform : translateY(-8px) rotate(-45deg);width: 30px;;}
+    50%{-webkit-transform : translateY(-9px) rotate(0);width: 30px;}
+    100%{-webkit-transform : translateY(0px) rotate(0);width: 25px; background: #333}
+}
+nav{
+    width: 100%; height: 100vh;
+    background: #000;
+    padding-top: 100px;
+    position: absolute;
+    z-index: 50;
+    padding-top: 250px;
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: .5s;
+}
+nav.active{
+    transform: translateX(0);
+    visibility: initial;
+}
+nav p{
+    width: 100%;
+    font-size: 20px;
+    color: #fff;
+    font-family: 'Ebrima';
+    margin-left:10%;
+    z-index: 10;
+}
+
+nav ul li{
+    padding-left:10%;
+    margin-top: 100px;
+    position: relative;
+    z-index: 5;
+}
+nav ul li:after{
+    content: '';
+    width: 100%; height: 1px;
+    background: #333;
+    position: absolute;left: 0; bottom: 18%;
+}
+nav ul li:first-of-type{
+    margin-top: 0;
+}
+nav ul strong{
+    font-size: 4vw;
+    font-family: 'Ebrima';
+    font-weight: unset;
+    color: #ffdd0f;
+}
+nav ul a{
+    font-size: 5vw;
+    font-family: 'Century Gothic';
+    font-weight: bold;
+    color: #ffdd0f;
+    margin: 0 2%;
+    position: relative;
+    letter-spacing:5px;
+}
+
+nav ul a:after{
+    content: '';
+    width: 0%; height: 15%;
+    background: #fff;
+    position: absolute;
+    left: 0; top: 40%;
+    transition: .5s;
+}
+
+nav ul a:hover:after{
+    width: 100%;
+}
+nav ul small{
+    display: inline-block;
+    width: 15%;
+    font-size: 1.2vh;;color: #fff;
+    font-family: 'Calibri';
+    letter-spacing: 5px;
+    position: absolute; top: 50%;
+}
+
+
+.txtShadow{
+    position: absolute;
+    right: -10%; top: 40vh;
+}
+.txtShadow span{
+    font-family: 'FuturaBlack BT';
+    color: #000;
+    font-size: 9vw;
+    letter-spacing: 50px;
+    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+    transform: rotate(90deg);
+}
+.footTxt{
+    width: 100%; height: 150px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 100px;
+    padding-top: 150px;
+}
+.footTxt span{
+    font-size: 1.2vh;
+    color: #fff;
+    font-family: 'Calibri';
+    white-space: pre-line;
+}
+
+
+@media(max-width:1100px){
+    nav ul small{
+        left: 10%; top: 100%;
+        width:100%
+    }
+}
+@media(max-width:500px){
+    .footTxt{
+        padding: 0;
+        display: unset;
+        text-align: center;
+    }
+    .footTxt span{
+        white-space: unset;
+    }
+    .footTxt span:first-of-type{
+        margin-top: 100px;
+    }
+    .txtShadow{
+        display: none;
+    }
+    nav ul small{
+        letter-spacing: 3px;
+    }
+    nav ul li{
+        margin-top: 50px;
+    }
+    nav ul li:first-of-type{
+        margin-top: 70px;
+    }
+}
