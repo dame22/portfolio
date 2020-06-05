@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@font-face {font-family: 'MapoPeacefull'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoPeacefullA.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'TmonMonsori'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff') format('woff'); font-weight: normal; font-style: normal; }
+
 html,body {
     margin: 0; 
+    
 }
 
 

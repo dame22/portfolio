@@ -1,13 +1,15 @@
 <? 
-    include_once $_SERVER['DOCUMENT_ROOT']."/HSD_project/admin/admin_check.php";
-
+    include_once $_SERVER['DOCUMENT_ROOT']."/db.php";
+    
     $name = $_POST['name'];
     $email = $_POST['email'];
     $tel = $_POST['tel'];
-    $messaga = $_POST['messaga'];
-    $date = date();
-    
-    $query = "insert into contact(name, email, tel, messaga, date) values ('$name','$email','$tel','$messaga','$date')";
+    $message = $_POST['message'];
+    $date = date('y-m-d');
+
+    $query = "insert into contact(name, email, tel, message,date) values ('$name','$email','$tel','$message','$date')";
+
     mq($query);
-    page('contact.php');
+
+    back('MESSAGE SENT');
 ?>

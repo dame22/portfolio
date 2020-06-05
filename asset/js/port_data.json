@@ -11,9 +11,9 @@
 		{
 			"imgSrc": "./asset/img/main02.png",
 			"siteName": "PetHome",
-			"siteDesc": "어쩌구..",
+			"siteDesc": "부재시 반려동물을 돌봐주는 펫시터 어플에 대한 서비스 내용을 안내해주는 PC 사이트<br> 디자인, 기획, 제작 100% 참여",
 			"useLang": "HTML, CSS(media query),jQuery",
-			"interaction": "슬라이드 메뉴,sms,,,,,,,,,",
+			"interaction": "슬라이드 메뉴, SMS 문자 발송 정규식, 카운팅",
 			"date": "2020.04"
 		}
 	]

@@ -1,5 +1,13 @@
 <?
-    include_once $_SERVER['DOCUMENT_ROOT']."/portfolio/head.php";
+    include_once $_SERVER['DOCUMENT_ROOT']."/head.php";    
+?>
+    <link rel="stylesheet" href="asset/css/contact_style.css">
+    <script src='asset/js/contact.js'></script>
+</head>
+<body>
+    <div id="wrap">
+<?
+    include_once $_SERVER['DOCUMENT_ROOT']."/navi.php";
 ?>
         <section>
             <div class="text">
@@ -54,13 +62,13 @@
                 <form  name="contact" action="contact_ok.php" method="post">
                     <div class="box">
                         <div class="contact">
-                            <input type="text" placeholder="NAME">
-                            <input type="tel" placeholder="E-MAIL">
-                            <input type="email" placeholder="TEL">
+                            <input type="text" placeholder="NAME" name="name">
+                            <input type="email" placeholder="E-MAIL" name="email">
+                            <input type="tel" placeholder="TEL" name="tel">
                         </div>
                         <div class="message">
                             <p>MESSAGE</p>
-                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                            <textarea name="message" id="" cols="30" rows="10"></textarea>
                         </div>
                     </div>
                     <div class="send">
@@ -68,6 +76,8 @@
                     </div>
                 </form>
             </article>
+
+            
 
         </section>
     </div>

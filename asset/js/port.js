@@ -1,37 +1,6 @@
-$(function() {
-    $('header').load("navi.html");
-
-    $.ajax({
-        url: 'asset/js/port_data.json',
-        dataType: 'json',
-        success: function(data) {
-            console.log("data",data)
-            var sites = data.sites;
-            var html = "";
-            for (var i=0; i<sites.length; i++) {
-                html += "<section>";
-                html += "<figure><img src=" + sites[i].imgSrc + ">";
-                html += "<figcaption><a href='#'>VIEW SITE →</a></figcaption>";
-                html += "</figure> <ul>";
-                html += "<li>SITE</li>";
-                html += "<li>" + sites[i].siteName + "<br/>: "+sites[i].siteDesc+"</li>";
-                html += "<li>사용된 언어</li>";
-                html += "<li>" + sites[i].useLang + "</li>";
-                html += "<li>INTERACTION</li>";
-                html += "<li>" + sites[i].interaction + "</li>";
-                html += "<li>DATE</li>";
-                html += "<li>" + sites[i].date + "</li></ul>";
-                html += "</section>";
-            }
-            $("#mySites").append(html);
-        }
-    });
-});
-
-
 window.addEventListener('DOMContentLoaded',function(){
  
-      var typingBool = false; 
+    var typingBool = false; 
     var typingIdx= 0; 
     var typingTxt = $(".typing-txt").text(); // 타이핑될 텍스트를 가져온다 
 
@@ -49,4 +18,44 @@ window.addEventListener('DOMContentLoaded',function(){
             clearInterval(tyInt); //끝나면 반복종료 
         } 
      }  
+});
+
+
+$(function(){
+    var move=0, num=0, bln=true;
+
+    $('html').scrollTop(0);
+
+    $('#list').on('mousewheel',function(e){     
+        var delta = e.originalEvent.wheelDelta;
+       
+      
+        if(bln){
+            bln = false;
+
+            if(delta < 0){//내림
+                num++;
+            }else{//올림
+                num--;
+            }
+            
+            if(num == -1){
+                num=0;
+            }else if(num == $('#list article').length){
+                num=$('#list article').length-1;
+            }
+
+            move = num * $(window).height();
+ 
+            $('html').stop().animate({
+                scrollTop:move
+            },1000, 'easeOutBounce');
+            
+
+            setTimeout(function(){
+                bln=true;
+            },1000)
+        }    
+    
+    });    
 });

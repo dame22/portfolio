@@ -1,25 +1,33 @@
 @import url('common.css');
+@import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
 
 body.over{overflow: hidden;}
 header{    
     position: relative;
-    height: 20vh;
+    height: 10vh;
 }
+
 header > a{
-    position: fixed; right: 0;
+    position: fixed; top: 10px; right: 0px;
     margin: 20px 40px;
     z-index: 100;
 
 }
 header a span{
-    width: 30px; height: 3px;
+    width: 30px; height: 5px;
     background: #333;
-    display: flex;
-    margin: 5px 0;
+    display: flex; margin: 3px 0;
+    transition: .5s;
 }
-header a span:last-of-type{
-    width: 25px;    
+header a:hover span:first-of-type{
+    border-radius: 5px 5px 0 0;
 }
+
+header a:hover span:last-of-type{
+    border-radius: 0 0 5px 5px;
+}
+
+
 header a.on span:nth-of-type(1){
     animation: navOn01 0.7s forwards;
 }
@@ -35,9 +43,6 @@ header a.off span:nth-of-type(1){
 header a.off span:nth-of-type(3){
     animation: navOff02 0.7s forwards;
 }
-header a.off span:nth-of-type(2){
-    width: 30px;
-}
 
 @keyframes navOn01{
     0%{-webkit-transform : translateY(4px) rotate(0);}
@@ -45,27 +50,27 @@ header a.off span:nth-of-type(2){
     100%{-webkit-transform : translateY(8px) rotate(45deg); background: #fff;}
 } 
 @keyframes navOn02{
-    0%{-webkit-transform : translateY(-4px) rotate(0);width: 30px;}
-    50%{-webkit-transform : translateY(-9px) rotate(0);width: 30px;}
-    100%{-webkit-transform : translateY(-8px) rotate(-45deg);width: 30px; background: #fff;}
+    0%{-webkit-transform : translateY(-4px) rotate(0);}
+    50%{-webkit-transform : translateY(-9px) rotate(0);}
+    100%{-webkit-transform : translateY(-8px) rotate(-45deg);background: #fff;}
 }
 @keyframes navOff01{
     0%{-webkit-transform : translateY(8px) rotate(45deg);}
     50%{-webkit-transform : translateY(9px) rotate(0)}
-    100%{-webkit-transform : translateY(0px) rotate(0); background: #333;}
+    100%{-webkit-transform : translateY(0px) rotate(0); }
 } 
 @keyframes navOff02{
-    0%{-webkit-transform : translateY(-8px) rotate(-45deg);width: 30px;;}
-    50%{-webkit-transform : translateY(-9px) rotate(0);width: 30px;}
-    100%{-webkit-transform : translateY(0px) rotate(0);width: 25px; background: #333}
+    0%{-webkit-transform : translateY(-8px) rotate(-45deg);}
+    50%{-webkit-transform : translateY(-9px) rotate(0);}
+    100%{-webkit-transform : translateY(0px) rotate(0);}
 }
+
 nav{
     width: 100%; height: 100vh;
     background: #000;
-    padding-top: 100px;
+    padding-top: 10%;
     position: absolute;
     z-index: 50;
-    padding-top: 250px;
     transform: translateX(100%);
     visibility: hidden;
     transition: .5s;
@@ -78,9 +83,9 @@ nav p{
     width: 100%;
     font-size: 20px;
     color: #fff;
-    font-family: 'Ebrima';
     margin-left:10%;
     z-index: 10;
+    font-family: 'Righteous', cursive;
 }
 
 nav ul li{
@@ -89,29 +94,29 @@ nav ul li{
     position: relative;
     z-index: 5;
 }
-nav ul li:after{
+/* nav ul li:after{
     content: '';
     width: 100%; height: 1px;
     background: #333;
     position: absolute;left: 0; bottom: 18%;
-}
+} */
 nav ul li:first-of-type{
     margin-top: 0;
 }
 nav ul strong{
     font-size: 4vw;
-    font-family: 'Ebrima';
     font-weight: unset;
-    color: #ffdd0f;
+    color: #efb200;
+    font-family: 'Righteous', cursive;
 }
 nav ul a{
     font-size: 5vw;
-    font-family: 'Century Gothic';
     font-weight: bold;
-    color: #ffdd0f;
+    color: #efb200;
     margin: 0 2%;
     position: relative;
     letter-spacing:5px;
+    font-family: 'Righteous', cursive;
 }
 
 nav ul a:after{
@@ -130,35 +135,21 @@ nav ul small{
     display: inline-block;
     width: 15%;
     font-size: 1.2vh;;color: #fff;
-    font-family: 'Calibri';
     letter-spacing: 5px;
     position: absolute; top: 50%;
 }
 
 
-.txtShadow{
-    position: absolute;
-    right: -10%; top: 40vh;
-}
-.txtShadow span{
-    font-family: 'FuturaBlack BT';
-    color: #000;
-    font-size: 9vw;
-    letter-spacing: 50px;
-    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
-    transform: rotate(90deg);
-}
 .footTxt{
     width: 100%; height: 150px;
     display: flex;
     justify-content: space-between;
-    padding: 0 100px;
-    padding-top: 150px;
+    padding: 0 200px;
+    padding-top: 100px;
 }
 .footTxt span{
     font-size: 1.2vh;
     color: #fff;
-    font-family: 'Calibri';
     white-space: pre-line;
 }
 
@@ -168,12 +159,14 @@ nav ul small{
         left: 10%; top: 100%;
         width:100%
     }
+    .footTxt{
+        padding-top: 25%;
+    }
 }
-@media(max-width:500px){
+@media(max-width:800px){
     .footTxt{
         padding: 0;
-        display: unset;
-        text-align: center;
+        flex-direction: column;
     }
     .footTxt span{
         white-space: unset;
@@ -181,8 +174,14 @@ nav ul small{
     .footTxt span:first-of-type{
         margin-top: 100px;
     }
+}
+@media(max-width:500px){
+    
     .txtShadow{
         display: none;
+    }
+    nav ul{
+        padding-top: 10%;
     }
     nav ul small{
         letter-spacing: 3px;

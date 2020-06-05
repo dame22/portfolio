@@ -1,7 +1,3 @@
-$(function(){
-    $('header').load("navi.html");
-});
-
 
 window.addEventListener('DOMContentLoaded',function(){
 
@@ -13,7 +9,7 @@ window.addEventListener('DOMContentLoaded',function(){
     if(typingBool==false){ 
        typingBool=true;        
        var tyInt = setInterval(typing,100); 
-     } 
+    } 
      
      function typing(){ 
         if(typingIdx<typingTxt.length){ 
@@ -22,7 +18,7 @@ window.addEventListener('DOMContentLoaded',function(){
         }else{ 
             clearInterval(tyInt); 
         } 
-     }  
+    }  
 
 
     
@@ -46,11 +42,21 @@ window.addEventListener('DOMContentLoaded',function(){
         
     }
 
-    // var docStyle = document.documentElement.style;
-
-    // document.addEventListener('mousemove', function(e) {
-    //   docStyle.setProperty('--mouse-x', e.clientX);
-    //   docStyle.setProperty('--mouse-y', e.clientY);
-    // });
+        
+    $(document).ready(function(){
+        var i = 1;
+        
+        var faceAni = setInterval(function(){
+            i++;
+            $('.me img').attr('src','asset/img/face/face'+i+'.png'); 
+            
+            if(i == 28){
+                clearInterval(faceAni);            
+            }            
+        },150);         
+    }); 
+        
+   
     
+   
 }) 

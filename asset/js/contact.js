@@ -1,6 +1,4 @@
-$(function(){
-    $('header').load("navi.html");
-});
+
 
 window.addEventListener('DOMContentLoaded',function(){
  
